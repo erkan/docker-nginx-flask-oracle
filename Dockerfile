@@ -33,8 +33,7 @@ EXPOSE 8080
 
 # Install uWSGI
 RUN pip install uwsgi
-RUN chmod +x requirements.txt
-RUN pip install -r requirements.txt
+RUN pip install -r /opt/data/requirements.txt
 
 # Remove default configuration from Nginx
 RUN rm /etc/nginx/conf.d/default.conf
