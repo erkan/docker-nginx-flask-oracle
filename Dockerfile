@@ -6,6 +6,7 @@ RUN apt-get update
 RUN apt-get -y install gcc
 RUN apt-get -y install unzip
 RUN apt-get -y install libaio-dev
+RUN apt-get install vim
 
 ADD ./oracle-instantclient/ /opt/data
 ADD ./install-instantclient.sh /opt/data
