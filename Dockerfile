@@ -2,11 +2,10 @@ FROM python:3.8-buster
 
 LABEL maintainer="Erkan Lanpir <elanpir@gmail.com>"
 
-RUN apt-get update \
-    # gcc required for cx_Oracle
-    && apt-get -y install gcc \
-    && apt-get -y install unzip \
-    && apt-get -y install libaio-dev \
+RUN apt-get update
+RUN apt-get -y install gcc
+RUN apt-get -y install unzip
+RUN apt-get -y install libaio-dev
 
 ADD ./oracle-instantclient/ /opt/data
 ADD ./install-instantclient.sh /opt/data
@@ -26,10 +25,7 @@ COPY install-nginx-debian.sh /
 
 RUN bash /install-nginx-debian.sh
 
-EXPOSE 80
-
-# Expose 443, in case of LTS / HTTPS
-EXPOSE 443
+EXPOSE 8080
 
 # Install uWSGI
 RUN pip install uwsgi
