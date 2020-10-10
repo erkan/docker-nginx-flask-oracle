@@ -29,7 +29,7 @@ COPY install-nginx-debian.sh /
 RUN chmod +x /install-nginx-debian.sh
 RUN /install-nginx-debian.sh
 
-EXPOSE 8080
+EXPOSE 80
 
 # Install uWSGI
 RUN pip install uwsgi
