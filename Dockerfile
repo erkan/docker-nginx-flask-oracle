@@ -21,11 +21,11 @@ ENV OCI_INCLUDE_DIR=/opt/oracle/instantclient/sdk/include
 # INSTALL INSTANTCLIENT AND DEPENDENCIES
 
 COPY install-instantclient.sh /
-
+RUN chmod +x /install-instantclient.sh
 RUN /install-instantclient.sh
 
 COPY install-nginx-debian.sh /
-
+RUN chmod +x /install-nginx-debian.sh
 RUN /install-nginx-debian.sh
 
 EXPOSE 8080
