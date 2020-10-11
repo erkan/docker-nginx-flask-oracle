@@ -31,9 +31,11 @@ RUN /install-nginx-debian.sh
 
 EXPOSE 80
 
-# Install uWSGI
+# Install uWSGI, flusk, cx_oracle, mysql
 RUN pip install uwsgi
 RUN pip install -r /opt/data/requirements.txt
+RUN pip install pandas
+RUN pip install mysql-connector
 
 # Remove default configuration from Nginx
 RUN rm /etc/nginx/conf.d/default.conf
