@@ -36,6 +36,7 @@ RUN pip install uwsgi
 RUN pip install -r /opt/data/requirements.txt
 RUN pip install pandas
 RUN pip install mysql-connector
+RUN pip install requests
 
 # Remove default configuration from Nginx
 RUN rm /etc/nginx/conf.d/default.conf
